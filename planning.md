@@ -18,4 +18,4 @@ The number stopped on is what the computer uses to determine outcomes for the pl
 
 How is a win visually communicated to the player? 
 Slot machines have stop lines used to determine which image. Depending on
-![image](https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/f1d3069c-e5be-476b-8b71-700f0ce8881d)
+
