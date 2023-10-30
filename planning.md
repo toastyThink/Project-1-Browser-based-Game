@@ -7,6 +7,12 @@ Sources for the project:
 
 2. https://www.youtube.com/watch?v=yegxMTVMoJc
 
+   Wireframe of Desktop Layout
+[Desktop_Horizontal Layout Slot Machine.pdf](https://github.com/toastyThink/Project-1-Browser-based-Game/files/13200947/Desktop_Horizontal.Layout.Slot.Machine.pdf)
+
+Wireframe of Mobile Layout
+[Mobile View of Slot Machine.pdf](https://github.com/toastyThink/Project-1-Browser-based-Game/files/13200952/Mobile.View.of.Slot.Machine.pdf)
+
 Computerized slot machines use a pseudo random number generator (PRNG) to determine outcomes. When pressed, the play button tells the computer to stop the PRNG system. Depending on the number of reels for a machine, the computer will use the last several numbers generated (one for each reel) to determine the position of the reels. The number generated is what the computer uses to determine outcomes for the player. The random number generator must ensure that each pull has an equal chance of winning a jack-pot. 
 
 Each number generated corresponds to a spot on a "virtual reel". The computer tracks this by dividing each number by a set value. According to an article on howstuffworks.com, the set values divided by are usually 32, 64, 128, 256, or 512. The remainder of these numbers correspond to a slot on a virtual reel. It should be noted that these sets of numbers are also called seed numbers, seed values, or simply the seed. 
@@ -56,5 +62,7 @@ Stretch Goals
  
 	- The Jack-pot is given a more fancy 3D animation (think of the animations played when someone make a strike at a bowling alley)
 	- Loss conditions are also given 3D animations 
+
+ 
 	
 		
