@@ -1,8 +1,4 @@
 
-* {
-
-}
-
 body{
  background-color: grey;
  margin: 0;
@@ -15,16 +11,43 @@ main{
  margin: 5% 5% 5%;
 }
 
-li {
-position: absolute;
-border:1px solid black;
-top: 0;
-right: 0;
-overflow: hidden;
-width: 50%;
-height: 50%;
-transform-origin: 0% 100%;
+.slotReel{
+    position:relative;
+    background-color: salmon;
+    border: 1px solid black ;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    padding:0;
+    overflow: hidden;
+    transform-origin: center;
+    list-style-type: none;
 }
+
+.symbol{
+    position: absolute;
+    left:-100%; 
+    width: 200%;
+    height: 200%;
+    text-align: center;
+    transform: skewY(60deg) rotate(15deg);
+    padding-top:20px;
+}
+
+
+li {
+    overflow: hidden;
+    position: absolute;
+    border:1px solid black;
+    /* top:0; */
+    right: 0;
+    width: 50%;
+    height: 50%;
+    transform-origin: bottom left;
+}
+
+  
+  
 
 .Cherry{
     transform: rotate(0deg) skewY(-60deg);
@@ -63,13 +86,4 @@ transform-origin: 0% 100%;
     transform: rotate(330deg) skewY(-60deg);
 }
 
-.slotReel{
-    background-color: salmon;
-    border: 5px solid black ;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    padding:0;
-    overflow: hidden;
-}
-
+ 
