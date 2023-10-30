@@ -11,6 +11,11 @@ main{
  margin: 5% 5% 5%;
 }
 
+button {
+    width: 150px;
+    height: 50px;
+}
+
 .slotReel{
     position:relative;
     background-color: salmon;

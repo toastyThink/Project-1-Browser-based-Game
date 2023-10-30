@@ -14,14 +14,16 @@ let stopBtnArr = [];
 
 const stopBtn = document.querySelector('#stopper');
 
-
-document.addEventListener('click', function(stopBtn){stopBtnArr.unshift("x")});
+document.addEventListener('click', function(stopBtn){
+    stopBtnArr.unshift("x"); 
+    stopper();
+});
 document.addEventListener('DOMContentLoaded', (Event) => {
     //when document content is loaded immediatly call function to begin 
     //cycling through randomly generated numbers
-    
-    init();
-
+    // for(i=0; ihjkhk; i++){
+        init();
+    // }
     //animation of reels immediatly begins playing 
     
     //function reelsSpin(){
@@ -29,40 +31,43 @@ document.addEventListener('DOMContentLoaded', (Event) => {
     //}
 });
 
-if(spinTime === true){
-    function init() {
-        interval = 500;
-        timer = setInterval(generateNum(), interval);
-        return console.log(luckyNums);
+function init() {
+    if(spinTime === true){
+        setTimeout(function repeat(){
+            generateNum();
+            setTimeout(repeat, 900);
+        }, 900);
     }
 }
-
 
 function generateNum(){
    randomInt; 
    luckyNums.unshift(randomInt);
-    if(luckyNums.length > 3){
-        luckyNums.splice(4, Infinity);
+    if(luckyNums.length >= 3){
+        luckyNums.splice(3, Infinity);
+    }else{
+        return;
     }
-
-    return;
+   console.log(luckyNums);
 }
 
 function stopper(){
-    if(Event.stopBtn === 'click' && stopBtnArr.length < 2){
+    if(Event.target === 'click' && stopBtnArr.length < 2){
         //stop generating numbers
-        clearInterval(timer);
+        // clearInterval(timer);
         spinTime === false;
+        console.log(stopBtnArr);
         //make spinning animation stop the reel on the matching face
         //according to the random number generated
 
-    }else if(Event.stopBtn === 'click' && stopBtnArr.length >= 2){
+    }else if(Event.target === 'click' && stopBtnArr.length >= 2){
          //Begin the game again. Resume generating numbers
-            init();
             spinTime === true;
+           console.log(stopBtnArr);
     }
-
 }
+
+
 
 
 
