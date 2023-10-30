@@ -58,9 +58,9 @@ Lose Condition
 
 
 Stretch Goals 
-	- 3D animations are given for the wind conditions and lose conditions 
+	- 3D animations are given for the win conditions and lose conditions 
  
-	- The Jack-pot is given a more fancy 3D animation (think of the animations played when someone make a strike at a bowling alley)
+	- The Jack-pot is given a more fancy 3D animation (think of the animations played when someone makes a strike at a bowling alley)
 	- Loss conditions are also given 3D animations 
 
  
