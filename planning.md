@@ -29,7 +29,7 @@ It is also important to note: the jack pot slot usually has only one spot in an 
 
 
 Setup: 
-	- We will use a standard 3 reel machine. Each reel will have 64 slots 
+	- We will use a standard 3 reel machine. Each reel will have 12 slots 
 	- The jack-pot will occupy a single space out of all three reels and virtual reels. One reel will have the jack pot and no others will contain it
 	- Slots that are not the jack-pot may occupy more than one space on virtual reels
 	- Each "symbol" including the jack pot, will have remainder values assigned to it. If the remainder of the PRNG calculations equals a matching value, the corresponding reel will stop on that symbol
