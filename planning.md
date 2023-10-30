@@ -21,3 +21,40 @@ Because the systems used are pseudo random, the range of numbers used will event
 
 It is also important to note: the jack pot slot usually has only one spot in an entire machine. That means for a machine with 3 reels or more, only one image or sequence of images will correspond to the highest payback possible. According to howstuffworks.com if a machine has 64 slots per reel, this can be broken down to a chance of 1 in 63^3 or 1 in 262,144. The chances of winning will be even lower for machines with more slots or reels. 
 
+
+Setup: 
+	- We will use a standard 3 reel machine. Each reel will have 64 slots 
+	- The jack-pot will occupy a single space out of all three reels and virtual reels. One reel will have the jack pot and no others will contain it
+	- Slots that are not the jack-pot may occupy more than one space on virtual reels
+	- Each "symbol" including the jack pot, will have remainder values assigned to it. If the remainder of the PRNG calculations equals a matching value, the corresponding reel will stop on that symbol
+	
+
+	- The PRNG system immediately begins generating numbers as soon as the web page is loaded 
+		○ This triggers the reels to automatically start spinning 
+		○ The generated numbers are stored in an array  with a length of 3,  [0,1,2]. This is because each 
+		index of the array will correspond to one of the reels shown to the player
+		○ Generated numbers will use .unshift() to be put at the beginning of the array
+		○ When the array exceeds a length of 3, the last index will be deleted 
+		
+	- There will be a button labeled as "Play" the player can click on. When clicked this will trigger the following: 
+		○ The PRNG will stop recording numbers. 
+		○ The numbers in the array will be divided by 64 and use the remainder to determine which spot on each reel will be chosen 
+		○ The animation spinning each reel will then stop at the designated sign  
+		○ Depending on the order of signs stopped on, or if the jack-pot is chosen the player will be given a visual cue that they have won a prize or won the jack-pot
+		○ If a losing sequence is chosen the player will be given a visual cue to let them know they have lost and that they should try again
+
+Win Condition
+	- The jack-pot sequence / image is chosen. 
+	- Or a bonus prize is won (this is determined by a pre-set sequence of images. Ex: Cherry, Bar, Cherry = 97% pay back bonus & a free spin again
+	
+Lose Condition
+	- A losing sequence of images is chosen on all 3 reels. The player is given a visual cue they have lost
+
+
+Stretch Goals 
+	- 3D animations are given for the wind conditions and lose conditions 
+ 
+	- The Jack-pot is given a more fancy 3D animation (think of the animations played when someone make a strike at a bowling alley)
+	- Loss conditions are also given 3D animations 
+	
+		
