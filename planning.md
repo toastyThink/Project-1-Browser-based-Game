@@ -51,7 +51,7 @@ Setup:
 
 Win Condition
 	- The jack-pot sequence / image is chosen. 
-	- Or a bonus prize is won (this is determined by a pre-set sequence of images. Ex: Cherry, Bar, Cherry = 97% pay back bonus & a free spin again
+	- Or a bonus prize is won this is determined by a pre-set sequence of images. Ex: Cherry, Bar, Cherry = 97% pay back bonus & a free spin again
 	
 Lose Condition
 	- A losing sequence of images is chosen on all 3 reels. The player is given a visual cue they have lost
