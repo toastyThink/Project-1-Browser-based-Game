@@ -7,7 +7,7 @@ Sources for the project:
 
 2. https://www.youtube.com/watch?v=yegxMTVMoJc
 
-   Wireframe of Desktop Layout
+Wireframe of Desktop Layout
 [Desktop_Horizontal Layout Slot Machine.pdf](https://github.com/toastyThink/Project-1-Browser-based-Game/files/13200947/Desktop_Horizontal.Layout.Slot.Machine.pdf)
 
 Wireframe of Mobile Layout
