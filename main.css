@@ -115,7 +115,7 @@ li {
 }
 
 .notSelected{
-filter: blur( 10px);
+    filter: blur( 10px);
 }
 
   

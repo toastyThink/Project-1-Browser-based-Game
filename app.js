@@ -62,16 +62,18 @@ const luckySeven3 = document.querySelector('#reel3 > .luckySeven');
 const crown3 = document.querySelector('#reel3 > .Crown');
 
 
-
 const stopBtn = document.querySelector('#stopper');
-const playerMessage = document.querySelector('h1');
-const balance = document.querySelector('#balance > span');
+const playerMessage = document.querySelector('#playerMessage');
+const balance = document.querySelector('#balance');
+let bankAcc = 200000;
+
 
 document.addEventListener('click', function(stopBtn){
     stopBtnArr.unshift('X'); 
     stopper();
+    bankAcc -= 1000; 
+    balance.innerText = "Balance: $" + bankAcc;
     console.log(stopBtnArr);
-
 });
 
 document.addEventListener('DOMContentLoaded', (Event) => {
@@ -123,43 +125,84 @@ function stopper(){
         //stop generating numbers
         clearInterval(timer);
         spinTime === false;
+
         //Cherry
+        //if( luckyNums[0] % 2 === 0 && luckyNums[1] % 2 = 0 && luckyNums[2] % 2 = 0){
+        // playerMessage.innerText = "It's cherry picking time! You win $200!"
+        // balance.innerText + 200;
+        //}
 
         //Bar
-         //if( luckyNums[0] % 3 === 0 && luckyNums[1] % 9 = 0 && luckyNums[2] % 9 = 0){
-        // playerMessage.innerText = 'Diamonds Everywhere! You win $9,000!!'
-        // balance.innerText + 9,000;
+
+        //if( luckyNums[0] % 3 === 0 && luckyNums[1] % 3 = 0 && luckyNums[2] % 3 = 0){
+        // playerMessage.innerText = 'Bars accross the board! You win $300!!'
+        // balance.innerText + 300;
         //}
     
         //Diamonds: 
         
-        //if( luckyNums[0] % 9 === 0 && luckyNums[1] % 9 = 0 && luckyNums[2] % 9 = 0){
-        // playerMessage.innerText = 'Diamonds Everywhere! You win $9,000!!'
-        // balance.innerText + 9,000;
+        //if( luckyNums[0] % 4 === 0 && luckyNums[1] % 4 = 0 && luckyNums[2] % 4 = 0){
+        // playerMessage.innerText = 'Diamonds Everywhere! You win $4,000!!'
+        // balance.innerText + 4,000;
         //}
 
         //Emerald
 
+        //if( luckyNums[0] % 5 === 0 && luckyNums[1] % 5 = 0 && luckyNums[2] % 5 = 0){
+        // playerMessage.innerText = 'Wow so shiny! You win $5,000!!';
+        // balance.innerText + 5,000;
+        //}
+
         //Ruby
+
+        //if( luckyNums[0] % 6 === 0 && luckyNums[1] % 6 = 0 && luckyNums[2] % 6 = 0){
+        // playerMessage.innerText = 'Wow that's really rare! You win $6,000!!';
+        // balance.innerText + 6,000;
+        //}
 
         //Apple
 
+        //if( luckyNums[0] % 7 === 0 && luckyNums[1] % 7 = 0 && luckyNums[2] % 7 = 0){
+        // playerMessage.innerText = 'If only I could sell apples for this much! You win $7,000!!';
+        // balance.innerText + 7,000;
+        //}
+
         //Orange
 
+        //if( luckyNums[0] % 8 === 0 && luckyNums[1] % 8 = 0 && luckyNums[2] % 8 = 0){
+        // playerMessage.innerText = 'Orange you glad you just won! You win $8,000!!';
+        // balance.innerText + 8,000;
+        //}
+
         //Banana
+        //if( luckyNums[0] % 9 === 0 && luckyNums[1] % 9 = 0 && luckyNums[2] % 9 = 0){
+        // playerMessage.innerText = 'Amazing! You win $9,000!!';
+        // balance.innerText + 9,000;
+        //}
 
         //Lemon
+        //if( luckyNums[0] % 10 === 0 && luckyNums[1] % 10 === 0 && luckyNums[2] % 10 === 0){
+        // playerMessage.innerText = 'Wow you're on a Roll! You win $10,000!!';
+        // balance.innerText + 10,000;
+        //}
 
         //Avocado
+        //if( luckyNums[0] % 11 === 0 && luckyNums[1] % 11 === 0 && luckyNums[2] % 11 === 0){
+        // playerMessage.innerText = 'Holy Cow! You win $11,000!!';
+        // balance.innerText + 11,000;
+        //}
 
         //luckySeven
+        //if( luckyNums[0] % 12 === 0 && luckyNums[1] % 12 === 0 && luckyNums[2] % 12 === 0){
+        // playerMessage.innerText = 'Holy Cow! You win $11,000!!';
+        // balance.innerText + 12,000;
+        //}
 
         //Crown
-
-
-        //make spinning animation stop the reel on the matching face
-        //according to the random number generated
-        
+        //if( luckyNums[0] % 2 === 0 && luckyNums[1] % 4 === 0 && luckyNums[2] % 6 === 0){
+        // playerMessage.innerText = 'Jack Pot!! You win $100,000!!';
+        // balance.innerText + 100,000;
+        //}
 
         reel1.getAnimations().forEach(animation => {
             animation.cancel();
