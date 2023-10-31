@@ -32,13 +32,6 @@ document.addEventListener('click', function(stopBtn){
 // balance.innerText + 9,000;
 //}
 
-
-
-
-
-
-
-
 });
 
 document.addEventListener('DOMContentLoaded', (Event) => {
@@ -58,11 +51,8 @@ function init() {
         reel3.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
         {duration: 1000, iterations: Infinity});
         
-    }   
-    if(spinTime === false){
-
-        reel1.removeAttribute('animate');
-        
+    }else if(spinTime === false){
+    
         
     }
     return;
@@ -87,7 +77,9 @@ function stopper(){
         //make spinning animation stop the reel on the matching face
         //according to the random number generated
         console.log('false');
-        console.log(reel1);
+        //console.log(reel1);
+        console.log(reel1.getAnimations());
+    
     }
     if(stopBtnArr.length % 2 === 0){
          //Begin the game again. Resume generating numbers
