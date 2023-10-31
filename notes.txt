@@ -1,7 +1,10 @@
 
 
 
-
+ //This is very complex to make. Save for another time
+        //assign value to div.
+        //mathimatically calc rotation needed to land on the triangle
+        //assign div/id to each triangle 
 
 .slotReel{
     background-color: salmon;

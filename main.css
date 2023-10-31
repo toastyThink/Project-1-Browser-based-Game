@@ -109,6 +109,15 @@ li {
     transform-origin: bottom left;
 }
 
+.selected{
+    border: 2px solid gold;
+    box-shadow: gold 10px 10px 30px 50px;
+}
+
+.notSelected{
+filter: blur( 10px);
+}
+
   
   
 
