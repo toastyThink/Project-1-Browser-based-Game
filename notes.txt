@@ -1,49 +1,6 @@
 
 
-<ul class="slotReel" id="reel1">
-            <li class="Cherry"></li>
-            <li class="Bar"></li>
-            <li class="Diamond"></li>
-            <li class="Emerald"></li>
-            <li class="Ruby"></li>
-            <li class="Apple"></li>
-            <li class="Orange"></li>
-            <li class="Banana"></li>
-            <li class="Lemon"></li>
-            <li class="Avocado"></li>
-            <li class="luckySeven"></li>
-            <li class="Crown"></li>
-        </ul>
 
-        <ul class="slotReel" id="reel2">
-            <li class="Cherry"></li>
-            <li class="Bar"></li>
-            <li class="Diamond"></li>
-            <li class="Emerald"></li>
-            <li class="Ruby"></li>
-            <li class="Apple"></li>
-            <li class="Orange"></li>
-            <li class="Banana"></li>
-            <li class="Lemon"></li>
-            <li class="Avocado"></li>
-            <li class="luckySeven"></li>
-            <li class="Crown"></li>
-        </ul>
-
-        <ul class="slotReel" id="reel3">
-            <li class="Cherry"></li>
-            <li class="Bar"></li>
-            <li class="Diamond"></li>
-            <li class="Emerald"></li>
-            <li class="Ruby"></li>
-            <li class="Apple"></li>
-            <li class="Orange"></li>
-            <li class="Banana"></li>
-            <li class="Lemon"></li>
-            <li class="Avocado"></li>
-            <li class="luckySeven"></li>
-            <li class="Crown"></li>
-        </ul>
 
 
 .slotReel{

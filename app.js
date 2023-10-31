@@ -5,25 +5,23 @@
 // 1. will need an array to store values 
 
 let timer; //setInterval Id
-let interval; //count of cycles
-let randomInt = Math.floor(Math.random()*(264,250 - 0) + 0);
+let interval = 900; //count of cycles
 let spinTime = true;
 let luckyNums = []; 
-
 let stopBtnArr = [];
 
 const stopBtn = document.querySelector('#stopper');
 
 document.addEventListener('click', function(stopBtn){
-    stopBtnArr.unshift("x"); 
+    stopBtnArr.unshift('X'); 
     stopper();
+    console.log(stopBtnArr);
 });
+
 document.addEventListener('DOMContentLoaded', (Event) => {
     //when document content is loaded immediatly call function to begin 
     //cycling through randomly generated numbers
-    // for(i=0; ihjkhk; i++){
         init();
-    // }
     //animation of reels immediatly begins playing 
     
     //function reelsSpin(){
@@ -33,15 +31,17 @@ document.addEventListener('DOMContentLoaded', (Event) => {
 
 function init() {
     if(spinTime === true){
-        setTimeout(function repeat(){
-            generateNum();
-            setTimeout(repeat, 900);
-        }, 900);
+       timer = setInterval(generateNum, interval);
     }
+    if(spinTime === false){
+        console.log(spinTime);
+        console.log(stopBtnArr);
+    }
+    return;
 }
 
 function generateNum(){
-   randomInt; 
+   let randomInt = Math.floor(Math.random()*(9000000 - 0) + 0);
    luckyNums.unshift(randomInt);
     if(luckyNums.length >= 3){
         luckyNums.splice(3, Infinity);
@@ -52,18 +52,22 @@ function generateNum(){
 }
 
 function stopper(){
-    if(Event.target === 'click' && stopBtnArr.length < 2){
+    if(stopBtnArr.length % 2 !== 0){
         //stop generating numbers
-        // clearInterval(timer);
+        clearInterval(timer);
         spinTime === false;
-        console.log(stopBtnArr);
         //make spinning animation stop the reel on the matching face
         //according to the random number generated
-
-    }else if(Event.target === 'click' && stopBtnArr.length >= 2){
+        console.log('false');
+    }
+    if(stopBtnArr.length % 2 === 0){
          //Begin the game again. Resume generating numbers
             spinTime === true;
-           console.log(stopBtnArr);
+            init();
+            console.log('true');
+    }
+    if(stopBtnArr.length > 10){
+     stopBtnArr.splice([0], 10);
     }
 }
 
