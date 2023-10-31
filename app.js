@@ -44,15 +44,14 @@ document.addEventListener('DOMContentLoaded', (Event) => {
 function init() {
     if(spinTime === true){
        timer = setInterval(generateNum, interval);
-        reel1.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
+      reel1.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
         {duration: 1000, iterations: Infinity});
-        reel2.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
+
+     reel2.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
         {duration: 1000, iterations: Infinity});
-        reel3.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
+
+      reel3.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
         {duration: 1000, iterations: Infinity});
-        
-    }else if(spinTime === false){
-    
         
     }
     return;
@@ -71,14 +70,25 @@ function generateNum(){
 
 function stopper(){
     if(stopBtnArr.length % 2 !== 0){
+
+        
         //stop generating numbers
         clearInterval(timer);
         spinTime === false;
         //make spinning animation stop the reel on the matching face
         //according to the random number generated
         console.log('false');
-        //console.log(reel1);
-        console.log(reel1.getAnimations());
+
+        reel1.getAnimations().forEach(animation => {
+            animation.cancel();
+        });
+        reel2.getAnimations().forEach(animation => {
+            animation.cancel();
+        });
+        reel3.getAnimations().forEach(animation => {
+            animation.cancel();
+        });
+        
     
     }
     if(stopBtnArr.length % 2 === 0){
