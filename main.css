@@ -13,24 +13,78 @@ main{
  border: 5px solid greenyellow;
  height: 85vh;
  margin: 5% 5% 5%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content:center;
+}
+
+#reelWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    order: 2;
+}
+
+section{
+    margin:0 0.5em;
+}
+
+h1{
+    flex-grow: 1;
+    order: 1;
+}
+
+h2{
+    color:green;
+    background-color: khaki;
+    border-radius: 20px;
+    margin:0 40px;
+
+    font-size: 20px;
+    height: 30px;
+    order:3;
 }
 
 button {
     width: 150px;
     height: 50px;
+    order: 4;
+
 }
 
 .slotReel{
     position:relative;
-    background-color: salmon;
+    background-color: darkgoldenrod;
     border: 1px solid black ;
     border-radius: 50%;
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
     padding:0;
     overflow: hidden;
     transform-origin: center;
     list-style-type: none;
+    
+}
+
+#reel1Triangle{
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 50px solid salmon;
+}
+#reel2Triangle{
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 50px solid salmon;
+}
+#reel3Triangle{
+    width: 0px;
+    height: 0px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 50px solid salmon;
 }
 
 .symbol{
