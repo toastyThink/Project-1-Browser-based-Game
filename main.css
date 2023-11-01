@@ -31,6 +31,7 @@ section{
 h1{
     flex-grow: 1;
     order: 1;
+    margin: 30px;
 }
 
 h2{
@@ -53,8 +54,8 @@ button {
 
 .slotReel{
     position:relative;
-    background-color: darkgoldenrod;
-    border: 1px solid black ;
+    background-color: rgb(129, 99, 24);
+    border: 1px solid rgb(227, 185, 68) ;
     border-radius: 50%;
     width: 250px;
     height: 250px;
@@ -63,28 +64,6 @@ button {
     transform-origin: center;
     list-style-type: none;
     
-}
-
-#reel1Triangle{
-    width: 0px;
-    height: 0px;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 50px solid salmon;
-}
-#reel2Triangle{
-    width: 0px;
-    height: 0px;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 50px solid salmon;
-}
-#reel3Triangle{
-    width: 0px;
-    height: 0px;
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-top: 50px solid salmon;
 }
 
 .symbol{
@@ -101,7 +80,7 @@ button {
 li {
     overflow: hidden;
     position: absolute;
-    border:1px solid black;
+    border:1px solid rgb(77, 40, 4);
     /* top:0; */
     right: 0;
     width: 50%;
@@ -110,15 +89,11 @@ li {
 }
 
 .selected{
-    border: 2px solid gold;
-    box-shadow: gold 10px 10px 30px 50px;
+    border: 1px solid gold;
+    background-color:gold;
+    box-shadow: gold 10px 10px 10px 10px;
 }
 
-.notSelected{
-    filter: blur( 10px);
-}
-
-  
   
 
 .Cherry{

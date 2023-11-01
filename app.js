@@ -5,20 +5,17 @@
 // 1. will need an array to store values 
 
 let timer; //setInterval Id
+let timer2;
 let interval = 900; //count of cycles
 let spinTime = true;
 let luckyNums = []; 
 let stopBtnArr = [];
 
-const reelSpin = [
-    {transform: "rotate(0)"},
-    {transform: "rotate(360deg)"}
-];
-
 const reel1 = document.querySelector('#reel1');
 const reel2 = document.querySelector('#reel2');
 const reel3 = document.querySelector('#reel3');
 const slotReels = document.querySelectorAll(".slotReel");
+
 
 //Reel 1 Sections
 const cherry1 = document.querySelector('#reel1 > .Cherry');
@@ -34,8 +31,8 @@ const avocado1 = document.querySelector('#reel1 > .Avocado');
 const luckySeven1 = document.querySelector('#reel1 > .luckySeven');
 const crown1 = document.querySelector('#reel1 > .Crown');
 
-// const reel1Arr = [cherry1, bar1, diamond1, emerald1, ruby1, apple1, orange1, banana1,
-// lemon1, avocado1, luckySeven1, crown1];
+const reel1Arr = [cherry1, bar1, diamond1, emerald1, ruby1, apple1, orange1, banana1,
+lemon1, avocado1, luckySeven1, crown1];
 
 //Reel 2 Sections
 const cherry2 = document.querySelector('#reel2 > .Cherry');
@@ -51,8 +48,8 @@ const avocado2 = document.querySelector('#reel2 > .Avocado');
 const luckySeven2 = document.querySelector('#reel2 > .luckySeven');
 const crown2 = document.querySelector('#reel2 > .Crown');
 
-// const reel2Arr = [cherry2, bar2, diamond2, emerald2, ruby2, apple2, orange2, banana2,
-// lemon2, avocado2, luckySeven2, crown2];
+const reel2Arr = [cherry2, bar2, diamond2, emerald2, ruby2, apple2, orange2, banana2,
+lemon2, avocado2, luckySeven2, crown2];
 
 //Reel 3 Sections
 const cherry3 = document.querySelector('#reel3 > .Cherry');
@@ -68,8 +65,8 @@ const avocado3 = document.querySelector('#reel3 > .Avocado');
 const luckySeven3 = document.querySelector('#reel3 > .luckySeven');
 const crown3 = document.querySelector('#reel3 > .Crown');
 
-// const reel3Arr = [cherry3, bar3, diamond3, emerald3, ruby3, apple3, orange3, banana3,
-// lemon3, avocado3, luckySeven3, crown3];
+const reel3Arr = [cherry3, bar3, diamond3, emerald3, ruby3, apple3, orange3, banana3,
+lemon3, avocado3, luckySeven3, crown3];
 
 const stopBtn = document.querySelector('#stopper');
 const playerMessage = document.querySelector('#playerMessage');
@@ -82,7 +79,15 @@ document.addEventListener('click', function(stopBtn){
     stopper();
     bankAcc -= 1000; 
     balance.innerText = "Balance: $" + bankAcc;
-    console.log(stopBtnArr);
+
+    if(bankAcc === 0){
+        playerMessage.innerText = "You've spent all your money! Game over!";
+        interval = 0;
+        
+        //create popup window that blocks entire screen letting player know they lose and have no
+        //money in their bank account
+    }
+
 });
 
 document.addEventListener('DOMContentLoaded', (Event) => {
@@ -94,32 +99,29 @@ document.addEventListener('DOMContentLoaded', (Event) => {
 function init() {
     if(spinTime === true){
        timer = setInterval(generateNum, interval);
+       timer2 = setInterval(generateClass, interval);
+      
       reel1.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
-        {duration: 1000, iterations: Infinity});
+        {duration: 1500, iterations: Infinity});
 
      reel2.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
         {duration: 1000, iterations: Infinity});
 
       reel3.animate([{transform: "rotate(0)"}, {transform: "rotate(360deg)"}], 
-        {duration: 1000, iterations: Infinity});
-        
-        slotReels.children.classList.remove('.selected'); 
-        slotReels.children.classList.remove('.notSelected');
-        //while spining random li's are highlited 
+        {duration: 800, iterations: Infinity});
+
+        //while reels are spining random li's are highlited 
         //--randomly adding class name that assigns colored highlight
         //for each( div) add class while spinning. Then take off
         //too a spinning li until the stop button is pressed
-
-        //can keep wheels turning/ but hihglight the section that's been 
-        //selected with the RNG. All other sections are blacked out
-
     }
     return;
 }
 
 function generateNum(){
-   let randomInt = Math.floor(Math.random()*(9000000 - 0) + 0);
-   luckyNums.unshift(randomInt);
+   let randomInt = Math.floor(Math.random()*(200 - 0) + 0);
+
+    luckyNums.unshift(randomInt);
     if(luckyNums.length >= 3){
         luckyNums.splice(3, Infinity);
     }else{
@@ -127,211 +129,180 @@ function generateNum(){
     }
    console.log(luckyNums);
 }
-
-function stopper(){
-    if(stopBtnArr.length % 2 !== 0){
-
-        //let randomDeg = Math.floor(Math.random()**(360 - 0) + 0);
-        //stop generating numbers
-        clearInterval(timer);
-        spinTime === false;
-        
-            //Cherry
-            if( luckyNums[0] % 2 === 0 && luckyNums[1] % 2 === 0 && luckyNums[2] % 2 === 0){
-                playerMessage.innerText = "It's cherry picking time! You win $200!";
-                bankAcc += 200;
-                cherry1.classList.add(".selected");
-                cherry2.classList.add(".selected");
-                cherry3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-               
-            }
-
-            //Bar
-            if( luckyNums[0] % 3 === 0 && luckyNums[1] % 3 === 0 && luckyNums[2] % 3 === 0){
-                playerMessage.innerText = 'Bars accross the board! You win $300!!';
-                bankAcc += 300;
-                bar1.classList.add(".selected");
-                bar2.classList.add(".selected");
-                bar3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-        
-            //Diamonds: 
-            if( luckyNums[0] % 4 === 0 && luckyNums[1] % 4 === 0 && luckyNums[2] % 4 === 0){
-                playerMessage.innerText = 'Diamonds Everywhere! You win $4,000!!';
-                bankAcc += 4000;
-                diamond1.classList.add(".selected");
-                diamond2.classList.add(".selected");
-                diamond3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Emerald
-            if( luckyNums[0] % 5 === 0 && luckyNums[1] % 5 === 0 && luckyNums[2] % 5 === 0){
-                playerMessage.innerText = 'Wow so shiny! You win $5,000!!';
-                bankAcc += 5000;
-                emerald1.classList.add(".selected");
-                emerald2.classList.add(".selected");
-                emerald3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Ruby
-            if( luckyNums[0] % 6 === 0 && luckyNums[1] % 6 === 0 && luckyNums[2] % 6 === 0){
-                playerMessage.innerText = "You got all rubies! You win $6,000!!";
-                bankAcc += 6000;
-                ruby1.classList.add(".selected");
-                ruby2.classList.add(".selected");
-                ruby3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Apple
-            if( luckyNums[0] % 7 === 0 && luckyNums[1] % 7 === 0 && luckyNums[2] % 7 === 0){
-                playerMessage.innerText = 'If only I could sell apples for this much! You win $7,000!!';
-                bankAcc += 7000;
-                apple1.classList.add(".selected");
-                apple2.classList.add(".selected");
-                apple3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Orange
-            if( luckyNums[0] % 8 === 0 && luckyNums[1] % 8 === 0 && luckyNums[2] % 8 === 0){
-                playerMessage.innerText = 'Orange you glad you just won! You win $8,000!!';
-                bankAcc += 8000;
-                orange1.classList.add(".selected");
-                orange2.classList.add(".selected");
-                orange3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Banana
-            if( luckyNums[0] % 9 === 0 && luckyNums[1] % 9 === 0 && luckyNums[2] % 9 === 0){
-                playerMessage.innerText = 'Amazing! You win $9,000!!';
-                bankAcc += 9000;
-                banana1.classList.add(".selected");
-                banana2.classList.add(".selected");
-                banana3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Lemon
-            if( luckyNums[0] % 10 === 0 && luckyNums[1] % 10 === 0 && luckyNums[2] % 10 === 0){
-                playerMessage.innerText = "Wow you're on a Roll! You win $10,000!!";
-                bankAcc += 10000;
-                lemon1.classList.add(".selected");
-                lemon2.classList.add(".selected");
-                lemon3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Avocado
-            if( luckyNums[0] % 11 === 0 && luckyNums[1] % 11 === 0 && luckyNums[2] % 11 === 0){
-                playerMessage.innerText = 'Holy Cow! You win $11,000!!';
-                bankAcc += 11000;
-                avocado1.classList.add(".selected");
-                avocado2.classList.add(".selected");
-                avocado3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //luckySeven
-            if( luckyNums[0] % 12 === 0 && luckyNums[1] % 12 === 0 && luckyNums[2] % 12 === 0){
-                playerMessage.innerText = 'Holy Cow! You win $11,000!!';
-                bankAcc += 12000;
-                luckySeven1.classList.add(".selected");
-                luckySeven2.classList.add(".selected");
-                luckySeven3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-            //Crown
-            if( luckyNums[0] % 2 === 0 && luckyNums[1] % 4 === 0 && luckyNums[2] % 6 === 0){
-                playerMessage.innerText = 'Jack Pot!! You win $100,000!!';
-                bankAcc += 100000;
-                crown1.classList.add(".selected");
-                crown2.classList.add(".selected");
-                crown3.classList.add(".selected");
-                
-                    if(slotReels.children.classList !== ".selected"){
-                        element.classList.add('.notSelected');
-
-                    }
-            }
-
-        reel1.getAnimations().forEach(animation => {
-            animation.cancel();
+    function generateClass(){
+        let randomClass = Math.floor(Math.random()*(12 - 0) + 0);
+        reel1Arr.forEach((element) => {
+            element.classList.remove('selected');
         });
-        reel2.getAnimations().forEach(animation => {
-            animation.cancel();
+
+        reel2Arr.forEach((element) => {
+            element.classList.remove('selected');
         });
-        reel3.getAnimations().forEach(animation => {
-            animation.cancel();
-        });
-        console.log('false');
+
+        reel3Arr.forEach((element) => {
+            element.classList.remove('selected');
+        }); console.log('generating class');
+                    
+        reel1Arr[randomClass].classList.add('selected'); 
+        reel2Arr[randomClass].classList.add('selected');
+        reel3Arr[randomClass].classList.add('selected');
+
+    }
+
     
-    }
-    if(stopBtnArr.length % 2 === 0){
-         //Begin the game again. Resume generating numbers
-            spinTime === true;
-            init();
-            console.log('true');
-    }
-    if(stopBtnArr.length > 10){
-     stopBtnArr.splice([0], 10);
-    }
+function stopper(){
+
+        if(stopBtnArr.length % 2 !== 0){
+            clearInterval(timer);
+            clearInterval(timer2);
+            spinTime === false;
+            //remove all of the random highlights from regular spinning when stopped
+            for(let i = 0; i<reel1Arr.length; i++){
+                reel1Arr[i].classList.remove('selected'); 
+                reel2Arr[i].classList.remove('selected'); 
+                reel3Arr[i].classList.remove('selected');    
+            }
+
+            reel1.getAnimations().forEach(animation => {
+                animation.cancel();
+            });
+            reel2.getAnimations().forEach(animation => {
+                animation.cancel();
+            });
+            reel3.getAnimations().forEach(animation => {
+                animation.cancel();
+            });
+            console.log('false');
+
+                //Cherry
+                if( luckyNums[0] % 2 === 0 ){
+                    playerMessage.innerText = "It's cherry picking time! You win $200!";
+                    bankAcc += 200;
+                    cherry1.classList.add("selected");
+                    cherry2.classList.add("selected");
+                    cherry3.classList.add("selected");
+                        
+                }
+
+                //Bar
+                if(luckyNums[0]/2 === 0 ){
+                    playerMessage.innerText = 'Bars accross the board! You win $300!!';
+                    bankAcc += 300;
+                    bar1.classList.add("selected");
+                    bar2.classList.add("selected");
+                    bar3.classList.add("selected");
+                        
+                }
+            
+                //Diamonds: 
+                if( luckyNums[2] % 2 === 0){
+                    playerMessage.innerText = 'Diamonds Everywhere! You win $4,000!!';
+                    bankAcc += 4000;
+                    diamond1.classList.add("selected");
+                    diamond2.classList.add("selected");
+                    diamond3.classList.add("selected");
+                
+                }
+
+                //Emerald
+                if( luckyNums[0] % 5 === 0 || luckyNums[1] % 5 === 0 || luckyNums[2] % 5 === 0){
+                    playerMessage.innerText = 'Wow so shiny! You win $5,000!!';
+                    bankAcc += 5000;
+                    emerald1.classList.add("elected");
+                    emerald2.classList.add("selected");
+                    emerald3.classList.add("selected");
+                    
+                }
+
+                //Ruby
+                if( luckyNums[0] % 6 === 0 || luckyNums[1] % 6 === 0 || luckyNums[2] % 6 === 0){
+                    playerMessage.innerText = "You got all rubies! You win $6,000!!";
+                    bankAcc += 6000;
+                    ruby1.classList.add("selected");
+                    ruby2.classList.add("selected");
+                    ruby3.classList.add("selected");
+
+                }
+
+                //Apple
+                if( luckyNums[0]/7 === 0 || luckyNums[1]/7 === 0 || luckyNums[2]/7 === 0){
+                    playerMessage.innerText = 'If only I could sell apples for this much! You win $7,000!!';
+                    bankAcc += 7000;
+                    apple1.classList.add("selected");
+                    apple2.classList.add("selected");
+                    apple3.classList.add("selected");
+
+                }
+
+                //Orange
+                if( luckyNums[0]/8 === 0 || luckyNums[1]/8 === 0 || luckyNums[2]/8 === 0){
+                    playerMessage.innerText = 'Orange you glad you just won! You win $8,000!!';
+                    bankAcc += 8000;
+                    orange1.classList.add("selected");
+                    orange2.classList.add("selected");
+                    orange3.classList.add("selected");
+    
+                }
+
+                //Banana
+                if( luckyNums[0]/9 === 0 ){
+                    playerMessage.innerText = 'Amazing! You win $9,000!!';
+                    bankAcc += 9000;
+                    banana1.classList.add("selected");
+                    banana2.classList.add("selected");
+                    banana3.classList.add("selected");
+            
+                }
+
+                //Lemon
+                if( luckyNums[0]/10 === 0 || luckyNums[1]/10 === 0 || luckyNums[2]/10 === 0){
+                    playerMessage.innerText = "Wow you're on a Roll! You win $10,000!!";
+                    bankAcc += 10000;
+                    lemon1.classList.add("selected");
+                    lemon2.classList.add("selected");
+                    lemon3.classList.add("selected");
+                }
+
+                //Avocado
+                if( luckyNums[0]/11 === 2){
+                    playerMessage.innerText = 'Holy Cow! You win $11,000!!';
+                    bankAcc += 11000;
+                    avocado1.classList.add("selected");
+                    avocado2.classList.add("selected");
+                    avocado3.classList.add("selected");
+            
+                }
+
+                //luckySeven
+                if( luckyNums[1] % 12 === 0){
+                    playerMessage.innerText = 'Holy Cow! You win $11,000!!';
+                    bankAcc += 12000;
+                    luckySeven1.classList.add("selected");
+                    luckySeven2.classList.add("selected");
+                    luckySeven3.classList.add("selected");
+        
+                }
+
+                //Crown
+                if( luckyNums[0] % 2 === 0 && luckyNums[2] % 5 === 0){
+                    playerMessage.innerText = 'Jack Pot!! You win $100,000!!';
+                    bankAcc += 100000;
+                    crown1.classList.add("selected");
+                    crown2.classList.add("selected");
+                    crown3.classList.add("selected");
+                    
+                }
+        }
+        if(stopBtnArr.length % 2 === 0){
+            //Begin the game again. Resume generating numbers
+                spinTime === true;
+                init();
+                console.log('true');
+        }
+        if(stopBtnArr.length > 10){
+        stopBtnArr.splice([0], 10);
+        }
 }
-
-
-
-
-
 
 
 
