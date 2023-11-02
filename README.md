@@ -11,13 +11,6 @@ There is a second win condition: If the player exceeds an account balance of $31
 
 Images of the Game
 ----------------------------
-![GamePlay Image 1](<images/Screen Shot 2023-11-02 at 6.16.00 PM.png>)
-
-![Gameplay Image 2](<images/Screen Shot 2023-11-02 at 6.26.59 PM.png>)
-
-![Gameplay Image 3](<images/Screen Shot 2023-11-02 at 6.27.57 PM.png>)
-
-![Gameplay Image 4](<images/Screen Shot 2023-11-02 at 6.29.42 PM.png>)
 
 Installation
 ----------------------------
