@@ -16,8 +16,6 @@ Images of the Game
 
 <img width="1340" alt="Screen Shot 2023-11-02 at 6 26 59 PM" src="https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/f109032c-eb20-4bc6-9226-dce06f4a8a84">
 
-<img width="1340" alt="Screen Shot 2023-11-02 at 6 26 59 PM 1" src="https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/25cf8226-f194-4e25-a0ca-7dc451d250fd">
-
 <img width="1349" alt="Screen Shot 2023-11-02 at 6 27 57 PM" src="https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/7afb1457-fbd9-4013-bae4-070a454345cb">
 
 
