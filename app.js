@@ -67,18 +67,16 @@ lemon3, avocado3, luckySeven3, crown3];
 
 //Information displayed to the player
 const stopBtn = document.querySelector('#stopper');
-const playerMessage = document.querySelector('#playerMessage > span');
+const playerMessage = document.querySelector('#playerMessage');
 const balance = document.querySelector('#balance');
-const endGame = document.querySelector('#endGame');
-const retry = document.querySelector('#retry');
-let bankAcc = 100;
+const gameOver = document.querySelector("#endGame");
+let bankAcc = 10000;
 
 //Psuedo Random Number Generators will immeidately start when the DOM has loaded completely
 document.addEventListener('DOMContentLoaded', (Event) => {  
     balance.innerText = "Available Balance: $" + bankAcc;
     init();
 });
-
 
 //Listen for the player to click the stop button and trigger further events
 //Subtract funds from player amount per-click
@@ -89,20 +87,20 @@ document.addEventListener('click', function(stopBtn){
     bankAcc -= 1000;
 
     if(bankAcc <= 0){
-        endGame.classList.add("gameOver");
-        endGame.animate([{opacity:0}, {opacity:1}], 
+        gameOver.classList.add("gameOver")
+        gameOver.animate([{opacity:0}, {opacity:1}], 
         {duration: 2000, iterations: 1});
 
-        endGame.innerText = "You've spent all your money! Game Over! <br> Reload the page to try again";
+        gameOver.innerText = "You've spent all your money! Game Over! Reload the page to try again!";
         interval = 0;
     }
 
-    if(bankAcc >= 999999){
-        endGame.classList.add("gameOver");
-        endGame.animate([{opacity: [0, 1]}, {opacity: [0, 1]}], 
+    if(bankAcc >= 310000){
+        gameOver.classList.add("gameOver") 
+        gameOver.animate([{opacity: [0, 1]}, {opacity: [0, 1]}], 
         {duration: 2000, iterations: 1});
 
-        endGame.innerText = "You beat the house! The casino is out of money! <br> Reload the page to try again";
+        gameOver.innerText = "You beat the house! The casino is out of money! Come back another day. Reload the page to try again!";
         interval = 0;
     }
 });
@@ -134,6 +132,7 @@ function generateNum(){
     }else{
         return;
     }
+   console.log(luckyNums);
 }
 //This function randomly assigns a highlight class to the reels
 //while they spin, before the player has stopped the slot machine
@@ -190,6 +189,18 @@ function stopper(){
                     cherry1.classList.add("selected");
                     cherry2.classList.add("selected");
                     cherry3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
                         
                 }
 
@@ -200,7 +211,18 @@ function stopper(){
                     bar1.classList.add("selected");
                     bar2.classList.add("selected");
                     bar3.classList.add("selected");
-                        
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      });     
                 }
             
                 //Diamonds 
@@ -210,6 +232,18 @@ function stopper(){
                     diamond1.classList.add("selected");
                     diamond2.classList.add("selected");
                     diamond3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
                 
                 }
 
@@ -217,9 +251,21 @@ function stopper(){
                 if( luckyNums[0] % 5 === 0 || luckyNums[1] % 5 === 0 || luckyNums[2] % 5 === 0){
                     playerMessage.innerText = 'Wow so shiny! You win $5,000!!';
                     bankAcc += 5000;
-                    emerald1.classList.add("elected");
+                    emerald1.classList.add("selected");
                     emerald2.classList.add("selected");
                     emerald3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
                     
                 }
 
@@ -231,6 +277,18 @@ function stopper(){
                     ruby2.classList.add("selected");
                     ruby3.classList.add("selected");
 
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
+
                 }
 
                 //Apple
@@ -241,6 +299,17 @@ function stopper(){
                     apple2.classList.add("selected");
                     apple3.classList.add("selected");
 
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
                 }
 
                 //Orange
@@ -250,6 +319,18 @@ function stopper(){
                     orange1.classList.add("selected");
                     orange2.classList.add("selected");
                     orange3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
     
                 }
 
@@ -260,6 +341,18 @@ function stopper(){
                     banana1.classList.add("selected");
                     banana2.classList.add("selected");
                     banana3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
             
                 }
 
@@ -270,6 +363,18 @@ function stopper(){
                     lemon1.classList.add("selected");
                     lemon2.classList.add("selected");
                     lemon3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
                 }
 
                 //Avocado
@@ -279,6 +384,18 @@ function stopper(){
                     avocado1.classList.add("selected");
                     avocado2.classList.add("selected");
                     avocado3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
             
                 }
 
@@ -289,6 +406,18 @@ function stopper(){
                     luckySeven1.classList.add("selected");
                     luckySeven2.classList.add("selected");
                     luckySeven3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
         
                 }
 
@@ -299,6 +428,18 @@ function stopper(){
                     crown1.classList.add("selected");
                     crown2.classList.add("selected");
                     crown3.classList.add("selected");
+
+                    //Confetti Generator from https://confetti.js.org/more.html
+                    function randomInRange(min, max) {
+                        return Math.random() * (max - min) + min;
+                      }
+                      
+                      confetti({
+                        angle: randomInRange(0, 360),
+                        spread: randomInRange(300, 300),
+                        particleCount: randomInRange(50, 100),
+                        origin: { y: 0.6 },
+                      }); 
                     
                 }
         }
