@@ -75,10 +75,13 @@ button {
     
 }
 
-#retry{
+/* #retry{
+
+} */
+
+#endGame{
     visibility: hidden;
 }
-
 
 .symbol{
     position: absolute;

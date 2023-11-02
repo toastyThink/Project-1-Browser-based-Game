@@ -69,7 +69,7 @@ lemon3, avocado3, luckySeven3, crown3];
 const stopBtn = document.querySelector('#stopper');
 const playerMessage = document.querySelector('#playerMessage > span');
 const balance = document.querySelector('#balance');
-const gameOver = document.querySelector("#endGame");
+const endGame = document.querySelector('#endGame');
 const retry = document.querySelector('#retry');
 let bankAcc = 100;
 
@@ -79,9 +79,6 @@ document.addEventListener('DOMContentLoaded', (Event) => {
     init();
 });
 
-document.addEventListener('click', function(retry){
-    this.location.reload();
-})
 
 //Listen for the player to click the stop button and trigger further events
 //Subtract funds from player amount per-click
@@ -92,23 +89,20 @@ document.addEventListener('click', function(stopBtn){
     bankAcc -= 1000;
 
     if(bankAcc <= 0){
-        gameOver.classList.add("gameOver");
-        retry.style.visibility = 'visible';
-        gameOver.animate([{opacity:0}, {opacity:1}], 
+        endGame.classList.add("gameOver");
+        endGame.animate([{opacity:0}, {opacity:1}], 
         {duration: 2000, iterations: 1});
 
-
-        gameOver.innerText = "You've spent all your money! Game Over!";
+        endGame.innerText = "You've spent all your money! Game Over! <br> Reload the page to try again";
         interval = 0;
     }
 
     if(bankAcc >= 999999){
-        gameOver.classList.add("gameOver");
-        retry.style.visibility = 'visible';
-        gameOver.animate([{opacity: [0, 1]}, {opacity: [0, 1]}], 
+        endGame.classList.add("gameOver");
+        endGame.animate([{opacity: [0, 1]}, {opacity: [0, 1]}], 
         {duration: 2000, iterations: 1});
 
-        gameOver.innerText = "You beat the house! The casino is out of money! <br> Come back another day.";
+        endGame.innerText = "You beat the house! The casino is out of money! <br> Reload the page to try again";
         interval = 0;
     }
 });
@@ -140,7 +134,6 @@ function generateNum(){
     }else{
         return;
     }
-   console.log(luckyNums);
 }
 //This function randomly assigns a highlight class to the reels
 //while they spin, before the player has stopped the slot machine
