@@ -20,6 +20,10 @@ Images of the Game
 
 <img width="1351" alt="Screen Shot 2023-11-02 at 6 29 42 PM" src="https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/267d2e91-ef64-4eb8-b4fa-ca93f624954e">
 
+<img width="1351" alt="Screen Shot 2023-11-02 at 6 29 42 PM" src="https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/267d2e91-ef64-4eb8-b4fa-ca93f624954e">
+
+<img width="1351" alt="Screen Shot 2023-11-02 at 6 29 42 PM" src="https://github.com/toastyThink/Project-1-Browser-based-Game/assets/55202537/267d2e91-ef64-4eb8-b4fa-ca93f624954e">
+
 Installation
 ----------------------------
 No installation of external resources is needed! You can 
