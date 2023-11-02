@@ -70,6 +70,7 @@ const stopBtn = document.querySelector('#stopper');
 const playerMessage = document.querySelector('#playerMessage > span');
 const balance = document.querySelector('#balance');
 const gameOver = document.querySelector("#endGame");
+const retry = document.querySelector('#retry');
 let bankAcc = 100;
 
 //Psuedo Random Number Generators will immeidately start when the DOM has loaded completely
@@ -77,6 +78,10 @@ document.addEventListener('DOMContentLoaded', (Event) => {
     balance.innerText = "Available Balance: $" + bankAcc;
     init();
 });
+
+document.addEventListener('click', function(retry){
+    this.location.reload();
+})
 
 //Listen for the player to click the stop button and trigger further events
 //Subtract funds from player amount per-click
@@ -87,16 +92,19 @@ document.addEventListener('click', function(stopBtn){
     bankAcc -= 1000;
 
     if(bankAcc <= 0){
-        gameOver.classList.add("gameOver")
+        gameOver.classList.add("gameOver");
+        retry.style.visibility = 'visible';
         gameOver.animate([{opacity:0}, {opacity:1}], 
         {duration: 2000, iterations: 1});
+
 
         gameOver.innerText = "You've spent all your money! Game Over!";
         interval = 0;
     }
 
     if(bankAcc >= 999999){
-        gameOver.classList.add("gameOver") 
+        gameOver.classList.add("gameOver");
+        retry.style.visibility = 'visible';
         gameOver.animate([{opacity: [0, 1]}, {opacity: [0, 1]}], 
         {duration: 2000, iterations: 1});
 

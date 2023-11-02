@@ -75,6 +75,10 @@ button {
     
 }
 
+#retry{
+    visibility: hidden;
+}
+
 
 .symbol{
     position: absolute;
