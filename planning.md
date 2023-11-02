@@ -1,11 +1,13 @@
 
 Project 1: Virtual Slot Machine 
 
-Sources for the project: 
+Resources I used for the project: 
 
 1. https://entertainment.howstuffworks.com/slot-machine.htm
 
 2. https://www.youtube.com/watch?v=yegxMTVMoJc
+
+---------------------------------------------------------------
 
 Wireframe of Mobile Layout
 [Mobile View of Slot Machine.pdf](https://github.com/toastyThink/Project-1-Browser-based-Game/files/13200952/Mobile.View.of.Slot.Machine.pdf)
