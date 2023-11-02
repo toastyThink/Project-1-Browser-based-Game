@@ -11,6 +11,11 @@ Resources I used for the project:
 
 4. https://developer.mozilla.org/en-US/
 
+5. https://confetti.js.org/more.html
+
+6. Background Image: https://www.deviantart.com/giozaga/art/Casino-Card-Background-Wallpaper-HD-1920x1080-454608180
+
+
 
 ---------------------------------------------------------------
 
@@ -57,11 +62,10 @@ Setup:
 		○ If a losing sequence is chosen the player will be given a visual cue to let them know they have lost and that they should try again
 
 Win Condition
-	- The jack-pot sequence / image is chosen. 
-	- Or a bonus prize is won this is determined by a pre-set sequence of images. Ex: Cherry, Bar, Cherry = 97% pay back bonus & a free spin again
+	- The player account exceeds a limit of $310000
 	
 Lose Condition
-	- A losing sequence of images is chosen on all 3 reels. The player is given a visual cue they have lost
+	- The Player runs out of money!
 
 
 Stretch Goals 
