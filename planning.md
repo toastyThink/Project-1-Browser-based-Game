@@ -7,6 +7,11 @@ Resources I used for the project:
 
 2. https://www.youtube.com/watch?v=yegxMTVMoJc
 
+3. https://stackoverflow.com/questions/29006214/how-to-divide-a-circle-into-12-equal-parts-with-color-using-css3-javascript
+
+4. https://developer.mozilla.org/en-US/
+
+
 ---------------------------------------------------------------
 
 Wireframe of Mobile Layout
