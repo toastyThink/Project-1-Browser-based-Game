@@ -27,7 +27,7 @@ just follow this url link: https://toastythink.github.io/Project-1-Browser-based
 
 These are all the wonderful sources I used throughout the project! 
 ------------------------------------------------------------------
-1. https://entertainment.howstuffworks.com/slot-machine.htm
+1. https://toastythink.github.io/Virtual-Slot-Machine/
 
 2. https://www.youtube.com/watch?v=yegxMTVMoJc
 
