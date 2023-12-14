@@ -22,7 +22,7 @@ Images of the Game
 Installation
 ----------------------------
 No installation of external resources is needed! You can 
-just follow this url link: https://toastythink.github.io/Project-1-Browser-based-Game/
+just follow this url link: https://toastythink.github.io/Virtual-Slot-Machine/
 
 
 These are all the wonderful sources I used throughout the project! 
